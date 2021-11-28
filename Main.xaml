@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1143,1703" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1086,1703" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -41,6 +41,13 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,6 +91,8 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="518,1638" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -116,14 +125,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='New column 1 Url'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NExtractData_7" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="ae1764a9-544a-448d-9639-de36f3c39df9" Version="V1">
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='New column 1 Url'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NExtractData_7" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="ae1764a9-544a-448d-9639-de36f3c39df9" Version="V1">
               <uix:NExtractData.DataTable>
                 <InOutArgument x:TypeArguments="sd:DataTable">
                   <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">ExtractDataTable1</mca:CSharpReference>
                 </InOutArgument>
               </uix:NExtractData.DataTable>
               <uix:NExtractData.Target>
-                <uix:TargetAnchorable BrowserURL="https://rpa.hybrydoweit.pl/#articles" DesignTimeRectangle="380, 139, 1160, 3541" FriendlyName="'Pomimo początkowych'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div' parentid='articles' tag='DIV' /&gt;" Guid="1d72faca-f746-4a41-aa6b-7f291cfb82d5" InformativeScreenshot="e6fc8822bc82860c5036907a47481a56.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Strona główna - RPA - powered by Betacom S.A.' /&gt;" SearchSteps="Selector" />
+                <uix:TargetAnchorable BrowserURL="https://rpa.hybrydoweit.pl/#articles" DesignTimeRectangle="380, 79, 1160, 3541" FriendlyName="'Pomimo początkowych'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div' parentid='articles' tag='DIV' /&gt;" Guid="4a64f4f7-1f4f-4c12-8acd-23bc10090f38" InformativeScreenshot="e6fc8822bc82860c5036907a47481a56.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Strona główna - RPA - powered by Betacom S.A.' /&gt;" SearchSteps="Selector" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
           </Sequence>
@@ -139,7 +148,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <ui:WriteRange AddHeaders="False" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="B2" WorkbookPath="C:\Users\wales\Desktop\New Microsoft Excel Worksheet.xlsx">
+          <ui:WriteRange AddHeaders="False" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="Sheet1" StartingCell="A1" WorkbookPath="C:\Users\wales\Desktop\New Microsoft Excel Worksheet.xlsx">
             <ui:WriteRange.DataTable>
               <InArgument x:TypeArguments="sd:DataTable">
                 <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">ExtractDataTable1</mca:CSharpValue>
@@ -156,7 +165,7 @@
             <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">new System.Data.DataTable();</mca:CSharpValue>
           </Variable.Default>
         </Variable>
-        <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable">
+        <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTablex">
           <Variable.Default>
             <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">new System.Data.DataTable();</mca:CSharpValue>
           </Variable.Default>
@@ -179,14 +188,14 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Title'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NExtractData_11" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="ae1764a9-544a-448d-9639-de36f3c39df9" Version="V1">
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Title'&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='div' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractSimilar="True" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NExtractData_11" LimitExtractionTo="Rows" MaximumResults="5" ScopeIdentifier="ae1764a9-544a-448d-9639-de36f3c39df9" Version="V1">
                 <uix:NExtractData.DataTable>
                   <InOutArgument x:TypeArguments="sd:DataTable">
                     <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">ExtractDataTable1</mca:CSharpReference>
                   </InOutArgument>
                 </uix:NExtractData.DataTable>
                 <uix:NExtractData.Target>
-                  <uix:TargetAnchorable BrowserURL="https://rpa.hybrydoweit.pl/#articles" DesignTimeRectangle="380, 139, 1160, 3541" FriendlyName="'Pomimo początkowych'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div' parentid='articles' tag='DIV' /&gt;" Guid="e518c1a4-1170-4536-9857-7137b28091c1" InformativeScreenshot="4d389fe843d81a7e5ae90f241f5bd612.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Strona główna - RPA - powered by Betacom S.A.' /&gt;" SearchSteps="Selector" />
+                  <uix:TargetAnchorable BrowserURL="https://rpa.hybrydoweit.pl/#articles" DesignTimeRectangle="380, 79, 1160, 3541" FriendlyName="'Pomimo początkowych'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div' parentid='articles' tag='DIV' /&gt;" Guid="153df96e-f0e5-4eea-82d0-12b435bc3513" InformativeScreenshot="4d389fe843d81a7e5ae90f241f5bd612.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Strona główna - RPA - powered by Betacom S.A.' /&gt;" SearchSteps="Selector" />
                 </uix:NExtractData.Target>
               </uix:NExtractData>
             </Sequence>
